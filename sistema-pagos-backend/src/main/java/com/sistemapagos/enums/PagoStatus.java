@@ -2,6 +2,8 @@
 package com.sistemapagos.enums;
 
 
-class PagoStatus {
-
+public enum PagoStatus {
+    PENDIENTE,
+    COMPLETADO,
+    CANCELADO
 }
