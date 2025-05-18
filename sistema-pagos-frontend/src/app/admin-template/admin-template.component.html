@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <button mat-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <span style="flex: auto;"></span>
+
+    <button mat-button>Home</button>
+    <button mat-button>Perfil</button>
+
+    <button mat-button [matMenuTriggerFor]="importMenu">
+      <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
+      Importar
+    </button>
+
+    <mat-menu #importMenu>
+      <button mat-menu-item>
+        Cargar Estudiantes
+      </button>
+      <button mat-menu-item>
+        Cargar Pagos
+      </button>
+    </mat-menu>
+
+    <button mat-raised-button color="accent">Salir</button>
+</mat-toolbar>
