@@ -14,9 +14,9 @@ import com.sistemapagos.entities.Estudiante;
 
 public interface EstudianteRepository extends JpaRepository<Estudiante, String> {
 
-    Estudiante findByIdEstudiante(String codigo); // busca un estudiante por su id
+    Estudiante findByCodigo(String codigo); // busca un estudiante por su id
 
-    List<Estudiante> findByProgramId(String programId); // busca estudiantes por su id de programa
+    List<Estudiante> findByProgramaId(String programId); // busca estudiantes por su id de programa
 
     
 }

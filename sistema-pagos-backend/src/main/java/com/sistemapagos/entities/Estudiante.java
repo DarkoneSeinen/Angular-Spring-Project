@@ -26,7 +26,7 @@ public class Estudiante {
     @Column(unique = true)
     private String codigo;
 
-    private String programId;
+    private String programaId;
 
     private String foto;
     

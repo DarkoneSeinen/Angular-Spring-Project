@@ -9,8 +9,8 @@ import com.sistemapagos.entities.Pago;
 import com.sistemapagos.enums.PagoStatus;
 import com.sistemapagos.enums.TypePago;
 
-@Repository
-public interface PagoRepository extends JpaRepository<Pago, String> {
+@Repository 
+public interface PagoRepository extends JpaRepository<Pago, Long> {
 
     List<Pago> findByEstudianteCodigo(String codigo);
 
