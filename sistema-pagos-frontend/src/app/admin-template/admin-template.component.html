@@ -5,8 +5,8 @@
 
     <span style="flex: auto;"></span>
 
-    <button mat-button>Home</button>
-    <button mat-button>Perfil</button>
+    <button mat-button [routerLink]="['/']">Home</button>
+    <button mat-button [routerLink]="['/profile']">Perfil</button>
 
     <button mat-button [matMenuTriggerFor]="importMenu">
       <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
@@ -14,35 +14,47 @@
     </button>
 
     <mat-menu #importMenu>
-      <button mat-menu-item>
+      <button mat-menu-item [routerLink]="['/loadEstudents']">
         Cargar Estudiantes
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item [routerLink]="['/loadPayments']">
         Cargar Pagos
       </button>
     </mat-menu>
 
-    <button mat-raised-button color="accent">Salir</button>
+    <button mat-raised-button color="accent" [routerLink]="['/login']">Salir</button>
 </mat-toolbar>
 
 <mat-drawer-container>
     <mat-drawer opened="true" mode="side" position="start">
       <mat-list>
         <mat-list-item>
-          <button mat-button>Estudiantes</button>
+          <button mat-button [routerLink]="['/dashboard']">
+            <mat-icon>Dashboard</mat-icon>
+            Dashboard
+          </button>
         </mat-list-item>
 
         <mat-list-item>
-          <button mat-button>Pagos</button>
+          <button mat-button [routerLink]="['/estudents']">
+            <mat-list-item>Estudiantes</mat-list-item>
+          </button>
         </mat-list-item>
+
+        <mat-list-item>
+          <button mat-button [routerLink]="['/payments']">
+            <mat-list-item>Pagos</mat-list-item>
+          </button>
+        </mat-list-item>
+
       </mat-list>
     </mat-drawer>
 
-    <!--otro mat drawer-->
+    <!--otro mat drawer aqui se mostarra los demas componentes-->
 
     <mat-drawer-content>
       <div style="min-height: 600px;">
-
+        <router-outlet></router-outlet>
       </div>
     </mat-drawer-content>
 
