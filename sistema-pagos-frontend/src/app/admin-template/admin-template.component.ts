@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './admin-template.component.html',
   styleUrl: './admin-template.component.css'
 })
+
 export class AdminTemplateComponent {
 
 }

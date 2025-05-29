@@ -9,7 +9,8 @@ import { EstudiantesComponent } from './estudiantes/estudiantes.component';
 import { PagosComponent } from './pagos/pagos.component';
 
 export const routes: Routes = [
-    {path: "", component:HomeComponent},
+    {path: "", component: LoginComponent},
+    {path: "home", component:HomeComponent},
     {path: "profile", component: ProfileComponent},
     {path: "login", component: LoginComponent},
     {path: "loadEstudents", component: LoadEstudiantesComponent},
