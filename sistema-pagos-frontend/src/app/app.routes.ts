@@ -9,6 +9,7 @@ import { EstudiantesComponent } from './estudiantes/estudiantes.component';
 import { PagosComponent } from './pagos/pagos.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 import { AuthGuard } from './guards/auth.guard';
+import { AuthorizationGuard } from './guards/authorization.guard';
 
 export const routes: Routes = [
     {path: '', component: LoginComponent},
@@ -18,8 +19,14 @@ export const routes: Routes = [
             {path: 'home', component:HomeComponent},
             {path: 'profile', component: ProfileComponent},
             {path: 'login', component: LoginComponent},
-            {path: 'loadEstudents', component: LoadEstudiantesComponent},
-            {path: 'loadPayments', component: LoadPagosComponent},
+            {
+                path: 'loadEstudents', component: LoadEstudiantesComponent,
+                canActivate: [AuthorizationGuard], data:{roles:['ADMIN']} // Solo los usuarios con rol de administrador pueden acceder a esta ruta
+            },
+            {
+                path: 'loadPayments', component: LoadPagosComponent,
+                canActivate: [AuthorizationGuard], data:{roles:['ADMIN']}
+            },
             {path: 'dashboard', component: DashboardComponent},
             {path: 'estudents', component: EstudiantesComponent},
             {path: 'payments', component: PagosComponent}
