@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthorizationGuard } from './guards/authorization.guard';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,6 +13,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
     AuthGuard, // aqui se agrega el guard de autenticacion
-    AuthorizationGuard
+    AuthorizationGuard,
+    provideHttpClient()
   ]
 };
