@@ -7,15 +7,21 @@ import { LoadPagosComponent } from './load-pagos/load-pagos.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EstudiantesComponent } from './estudiantes/estudiantes.component';
 import { PagosComponent } from './pagos/pagos.component';
+import { AdminTemplateComponent } from './admin-template/admin-template.component';
 
 export const routes: Routes = [
-    {path: "", component: LoginComponent},
-    {path: "home", component:HomeComponent},
-    {path: "profile", component: ProfileComponent},
-    {path: "login", component: LoginComponent},
-    {path: "loadEstudents", component: LoadEstudiantesComponent},
-    {path: "loadPayments", component: LoadPagosComponent},
-    {path: "dashboard", component: DashboardComponent},
-    {path: "estudents", component: EstudiantesComponent},
-    {path: "payments", component: PagosComponent}
+    {path: '', component: LoginComponent},
+    {path: 'login', component: LoginComponent},
+    {path: 'admin', component: AdminTemplateComponent, children:
+        [
+            {path: 'home', component:HomeComponent},
+            {path: 'profile', component: ProfileComponent},
+            {path: 'login', component: LoginComponent},
+            {path: 'loadEstudents', component: LoadEstudiantesComponent},
+            {path: 'loadPayments', component: LoadPagosComponent},
+            {path: 'dashboard', component: DashboardComponent},
+            {path: 'estudents', component: EstudiantesComponent},
+            {path: 'payments', component: PagosComponent}
+        ]
+    },
 ];

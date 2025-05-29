@@ -1,24 +1,27 @@
 <div class="container">
-    <mat-card-header>
-        <mat-card-title>
-            Autenticacion
-        </mat-card-title>
-    </mat-card-header>
+    <!--form group vincula un formulario-->
+    <mat-card class="login-form" [formGroup]="loginForm">
+        <mat-card-header>
+            <mat-card-title>
+                Autenticación
+            </mat-card-title>
+        </mat-card-header>
 
-    <mat-divider>    
-    </mat-divider>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label>Username o Email</mat-label>
+                <input matInput formControlName="username">
+            </mat-form-field>
 
-    <mat-card-content>
-        <div style="display: flex; gap: 1rem; align-items: center;">
-            <div>
-                <label for="username">Username o Email</label><br>
-                <input id="username" type="text">
-            </div>
-            <div>
-                <label for="password">Contraseña</label><br>
-                <input id="password" type="password">
-            </div>
-        </div>
-    </mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+            </mat-form-field>
+        </mat-card-content>
 
+        <mat-card-actions class="align-end">
+            <button (click)="login()" mat-raised-button color="primary">Login</button>
+        </mat-card-actions>
+    </mat-card>
 </div>

@@ -5,8 +5,8 @@
 
     <span style="flex: auto;"></span>
 
-    <button mat-button [routerLink]="['/home']">Home</button>
-    <button mat-button [routerLink]="['/profile']">Perfil</button>
+    <button mat-button [routerLink]="['/admin/home']">Home</button>
+    <button mat-button [routerLink]="['/admin/profile']">Perfil</button>
 
     <button mat-button [matMenuTriggerFor]="importMenu">
       <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
@@ -14,15 +14,19 @@
     </button>
 
     <mat-menu #importMenu>
-      <button mat-menu-item [routerLink]="['/loadEstudents']">
+      <button mat-menu-item [routerLink]="['/admin/loadEstudents']">
         Cargar Estudiantes
       </button>
-      <button mat-menu-item [routerLink]="['/loadPayments']">
+      <button mat-menu-item [routerLink]="['/admin/loadPayments']">
         Cargar Pagos
       </button>
     </mat-menu>
 
-    <button mat-raised-button color="accent" [routerLink]="['/login']">Salir</button>
+    <button mat-button *ngIf="authService.isAuthenticated">
+      {{ authService.username }}
+    </button>
+
+    <button mat-raised-button color="accent" (click)="logout()">Salir</button>
 </mat-toolbar>
 
 <!--el #mydrawer sirve para desplegar la barra (es de angular material)  -->
@@ -30,20 +34,20 @@
     <mat-drawer #myDrawer opened="true" mode="side" position="start">
       <mat-list>
         <mat-list-item>
-          <button mat-button [routerLink]="['/dashboard']">
+          <button mat-button [routerLink]="['/admin/dashboard']">
             <mat-icon>Dashboard</mat-icon>
             Dashboard
           </button>
         </mat-list-item>
 
         <mat-list-item>
-          <button mat-button [routerLink]="['/estudents']">
+          <button mat-button [routerLink]="['/admin/estudents']">
             <mat-list-item>Estudiantes</mat-list-item>
           </button>
         </mat-list-item>
 
         <mat-list-item>
-          <button mat-button [routerLink]="['/payments']">
+          <button mat-button [routerLink]="['/admin/payments']">
             <mat-list-item>Pagos</mat-list-item>
           </button>
         </mat-list-item>
