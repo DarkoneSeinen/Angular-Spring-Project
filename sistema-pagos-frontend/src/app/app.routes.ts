@@ -28,5 +28,4 @@ export const routes: Routes = [
         {path: 'load-pagos', component: LoadPagosComponent},
         {path: 'profile', component: ProfileComponent}
     ]},
-    {path: '**', redirectTo: 'login'}
 ];
