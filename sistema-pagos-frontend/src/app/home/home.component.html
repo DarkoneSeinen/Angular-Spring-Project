@@ -1,1 +1,37 @@
-<p>home works!</p>
+<div class="home-container">
+  <div class="welcome-section">
+    <h1>{{ getCurrentTime() }}</h1>
+    <p class="welcome-text">Bienvenido al Sistema de Gestión de Pagos</p>
+  </div>
+
+  <div class="menu-grid">
+    @for (item of menuItems; track item.title) {
+      <a [routerLink]="item.route" class="menu-item" [style.--card-color]="item.color">
+        <div class="icon-container">
+          <span class="material-icons">{{ item.icon }}</span>
+        </div>
+        <div class="item-content">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </a>
+    }
+  </div>
+
+  <div class="quick-stats">
+    <div class="stat-card">
+      <span class="material-icons">people</span>
+      <div class="stat-content">
+        <h4>Total Estudiantes</h4>
+        <p class="stat-number">...</p>
+      </div>
+    </div>
+    <div class="stat-card">
+      <span class="material-icons">payments</span>
+      <div class="stat-content">
+        <h4>Pagos del Mes</h4>
+        <p class="stat-number">...</p>
+      </div>
+    </div>
+  </div>
+</div>

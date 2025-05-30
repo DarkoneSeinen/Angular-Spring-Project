@@ -16,24 +16,17 @@ import { NewPagoComponent } from './new-pago/new-pago.component';
 export const routes: Routes = [
     {path: '', component: LoginComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'admin', component: AdminTemplateComponent,canActivate:[AuthGuard], children:
-        [
-            {path: 'home', component:HomeComponent},
-            {path: 'profile', component: ProfileComponent},
-            {path: 'login', component: LoginComponent},
-            {
-                path: 'loadEstudents', component: LoadEstudiantesComponent,
-                canActivate: [AuthorizationGuard], data:{roles:['ADMIN']} // Solo los usuarios con rol de administrador pueden acceder a esta ruta
-            },
-            {
-                path: 'loadPayments', component: LoadPagosComponent,
-                canActivate: [AuthorizationGuard], data:{roles:['ADMIN']}
-            },
-            {path: 'dashboard', component: DashboardComponent},
-            {path: 'estudents', component: EstudiantesComponent},
-            {path: 'payments', component: PagosComponent},
-            {path: 'estudiante-detalles/:codigo', component:EstudianteDetailsComponent},
-            {path: 'new-pago/:codigoEstudiante', component: NewPagoComponent}
-        ]
-    },
+    {path: 'admin', component: AdminTemplateComponent, canActivate: [AuthGuard], children: [
+        {path: '', redirectTo: 'home', pathMatch: 'full'},
+        {path: 'home', component: HomeComponent},
+        {path: 'dashboard', component: DashboardComponent},
+        {path: 'estudiantes', component: EstudiantesComponent},
+        {path: 'estudiantes/:id', component: EstudianteDetailsComponent},
+        {path: 'pagos', component: PagosComponent},
+        {path: 'new-pago', component: NewPagoComponent},
+        {path: 'load-estudiantes', component: LoadEstudiantesComponent},
+        {path: 'load-pagos', component: LoadPagosComponent},
+        {path: 'profile', component: ProfileComponent}
+    ]},
+    {path: '**', redirectTo: 'login'}
 ];
