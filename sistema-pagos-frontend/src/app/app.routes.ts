@@ -10,6 +10,7 @@ import { PagosComponent } from './pagos/pagos.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthorizationGuard } from './guards/authorization.guard';
+import { EstudianteDetailsComponent } from './estudiante-details/estudiante-details.component';
 
 export const routes: Routes = [
     {path: '', component: LoginComponent},
@@ -29,7 +30,8 @@ export const routes: Routes = [
             },
             {path: 'dashboard', component: DashboardComponent},
             {path: 'estudents', component: EstudiantesComponent},
-            {path: 'payments', component: PagosComponent}
+            {path: 'payments', component: PagosComponent},
+            {path: 'estudiante-detalles/:codigo', component:EstudianteDetailsComponent}
         ]
     },
 ];
