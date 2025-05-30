@@ -1,1 +1,49 @@
-<p>profile works!</p>
+<div class="profile-container">
+  <div class="profile-header">
+    <div class="profile-avatar">
+      <img [src]="userPhotoUrl || 'assets/default-avatar.png'" alt="Profile photo">
+    </div>
+    <h2>{{ user?.name || 'Usuario' }}</h2>
+  </div>
+
+  <div class="profile-content">
+    <div class="profile-section">
+      <h3>Información Personal</h3>
+      <div class="info-group">
+        <label>Nombre:</label>
+        <input type="text" [(ngModel)]="user.name" [disabled]="!isEditing">
+      </div>
+      <div class="info-group">
+        <label>Email:</label>
+        <input type="email" [(ngModel)]="user.email" [disabled]="!isEditing">
+      </div>
+      <div class="info-group">
+        <label>Teléfono:</label>
+        <input type="tel" [(ngModel)]="user.phone" [disabled]="!isEditing">
+      </div>
+    </div>
+
+    <div class="profile-section">
+      <h3>Resumen de Pagos</h3>
+      <div class="payment-summary">
+        <div class="summary-item">
+          <span>Pagos Totales</span>
+          <strong>{{ totalPayments }}</strong>
+        </div>
+        <div class="summary-item">
+          <span>Último Pago</span>
+          <strong>{{ lastPayment | date:'dd/MM/yyyy' }}</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button (click)="toggleEdit()" class="btn-edit">
+        {{ isEditing ? 'Guardar' : 'Editar Perfil' }}
+      </button>
+      <button *ngIf="isEditing" (click)="cancelEdit()" class="btn-cancel">
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>
