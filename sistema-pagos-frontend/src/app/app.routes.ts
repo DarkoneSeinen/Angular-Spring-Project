@@ -11,6 +11,7 @@ import { AdminTemplateComponent } from './admin-template/admin-template.componen
 import { AuthGuard } from './guards/auth.guard';
 import { AuthorizationGuard } from './guards/authorization.guard';
 import { EstudianteDetailsComponent } from './estudiante-details/estudiante-details.component';
+import { NewPagoComponent } from './new-pago/new-pago.component';
 
 export const routes: Routes = [
     {path: '', component: LoginComponent},
@@ -31,7 +32,8 @@ export const routes: Routes = [
             {path: 'dashboard', component: DashboardComponent},
             {path: 'estudents', component: EstudiantesComponent},
             {path: 'payments', component: PagosComponent},
-            {path: 'estudiante-detalles/:codigo', component:EstudianteDetailsComponent}
+            {path: 'estudiante-detalles/:codigo', component:EstudianteDetailsComponent},
+            {path: 'new-pago/:codigoEstudiante', component: NewPagoComponent}
         ]
     },
 ];
