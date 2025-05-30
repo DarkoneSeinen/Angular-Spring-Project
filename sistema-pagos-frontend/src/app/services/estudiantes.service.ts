@@ -26,4 +26,12 @@ export class EstudiantesService {
   public guardarPago(formData: any): Observable<Pago> {
     return this.http.post<Pago>(`${environment.backendHost}/pagos`, formData);
   }
+
+  public cargarEstudiantes(estudiantes: Estudiante[]): Observable<any> {
+    return this.http.post(`${environment.backendHost}/estudiantes/bulk`, estudiantes);
+  }
+
+  public cargarPagos(pagos: Pago[]): Observable<any> {
+    return this.http.post(`${environment.backendHost}/pagos/bulk`, pagos);
+  }
 }

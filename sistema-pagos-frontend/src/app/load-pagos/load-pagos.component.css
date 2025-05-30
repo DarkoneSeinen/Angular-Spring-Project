@@ -1,0 +1,57 @@
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.upload-card, .preview-card {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.upload-container {
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  background: #fafafa;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-container:hover, .upload-container.dragover {
+  border-color: #2196F3;
+  background: #E3F2FD;
+}
+
+.upload-container mat-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.file-hint {
+  color: #666;
+  margin-top: 16px;
+}
+
+.selected-file {
+  margin-top: 16px;
+  color: #2196F3;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-column-fecha {
+  flex: 0 0 120px;
+}
+
+.preview-card {
+  margin-top: 20px;
+}
