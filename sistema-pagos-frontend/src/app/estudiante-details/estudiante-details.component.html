@@ -1,7 +1,10 @@
 <div class="container">
-  <mat-toolbar>
-    <button (click)="agregarPago()" mat-raised-button color="primary">Agregar Pago</button>
-  </mat-toolbar>
+  <div class="action-toolbar">
+    <button (click)="agregarPago()" mat-raised-button color="primary" class="add-payment-button">
+      <mat-icon>add_circle</mat-icon>
+      <span>Agregar Pago</span>
+    </button>
+  </div>
   <mat-card>
     <mat-card-header>
       <mat-card-title>

@@ -1,0 +1,44 @@
+.action-toolbar {
+  padding: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: transparent;
+}
+
+.add-payment-button {
+  min-width: 140px;
+  padding: 0 24px;
+  height: 44px;
+  font-weight: 500;
+  border-radius: 22px;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.add-payment-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.add-payment-button mat-icon {
+  margin-right: 8px;
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.add-payment-button span {
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+
+mat-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+table {
+  width: 100%;
+  margin-top: 16px;
+}
