@@ -15,21 +15,48 @@ mat-drawer-container {
 
 mat-drawer {
   width: 250px;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 mat-list-item {
   height: 48px;
+  margin: 8px 0;
 }
 
 mat-list-item button {
   width: 100%;
   text-align: left;
-  padding: 0 16px;
+  padding: 0 24px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  border-radius: 0 24px 24px 0;
+  margin-right: 12px;
+  transition: all 0.3s ease;
 }
 
 mat-list-item button mat-icon {
-  margin-right: 8px;
+  margin-right: 12px;
+  color: #5f6368;
+}
+
+mat-list-item button span {
+  font-size: 14px;
+  color: #3c4043;
+}
+
+.active-link {
+  background-color: #e8f0fe !important;
+  color: #1a73e8 !important;
+}
+
+.active-link mat-icon {
+  color: #1a73e8 !important;
+}
+
+mat-list-item button:hover {
+  background-color: #f1f3f4;
 }
 
 .mat-mdc-menu-item {
