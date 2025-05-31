@@ -21,9 +21,9 @@ export const routes: Routes = [
         {path: 'home', component: HomeComponent},
         {path: 'dashboard', component: DashboardComponent},
         {path: 'estudiantes', component: EstudiantesComponent},
-        {path: 'estudiantes/:id', component: EstudianteDetailsComponent},
+        {path: 'estudiantes/:codigo', component: EstudianteDetailsComponent},
         {path: 'pagos', component: PagosComponent},
-        {path: 'new-pago', component: NewPagoComponent},
+        {path: 'new-pago/:codigoEstudiante', component: NewPagoComponent},
         {path: 'load-estudiantes', component: LoadEstudiantesComponent},
         {path: 'load-pagos', component: LoadPagosComponent},
         {path: 'profile', component: ProfileComponent}

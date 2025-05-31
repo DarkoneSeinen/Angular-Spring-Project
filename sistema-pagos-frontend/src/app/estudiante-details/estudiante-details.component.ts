@@ -6,12 +6,14 @@ import { EstudiantesService } from '../services/estudiantes.service';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
+import { CommonModule } from '@angular/common';
 
 
 
 @Component({
   selector: 'app-estudiante-details',
-  imports: [MatToolbarModule, MatCardModule, MatDivider, MatTableModule],
+  standalone: true,
+  imports: [CommonModule, MatToolbarModule, MatCardModule, MatDivider, MatTableModule],
   templateUrl: './estudiante-details.component.html',
   styleUrl: './estudiante-details.component.css'
 })
@@ -28,15 +30,17 @@ export class EstudianteDetailsComponent {
   }
   ngOnInit(): void {
     this.estudianteCodigo = this.activatedRoute.snapshot.params['codigo'];
-    this.estudiantesService.getPagosDeEstudiante(this.estudianteCodigo).subscribe({
-      next: value => {
-        this.pagosEstudiane = value;
-        this.pagosDataSource = new MatTableDataSource<Pago>(this.pagosEstudiane);
-      },
-      error: err => {
-        console.log(err);
-      }
-    })
+    if (this.estudianteCodigo) {
+      this.estudiantesService.getPagosDeEstudiante(this.estudianteCodigo).subscribe({
+        next: value => {
+          this.pagosEstudiane = value;
+          this.pagosDataSource = new MatTableDataSource<Pago>(this.pagosEstudiane);
+        },
+        error: err => {
+          console.log(err);
+        }
+      });
+    }
   }
 
   agregarPago() {

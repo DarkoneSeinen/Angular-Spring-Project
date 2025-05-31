@@ -7,36 +7,6 @@
     </mat-card-header>
     <mat-divider></mat-divider>
     <mat-card-content>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Código</th>
-            <th>Programa ID</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let estudiante of estudiantes">
-            <td>{{ estudiante.id }}</td>
-            <td>{{ estudiante.nombre }}</td>
-            <td>{{ estudiante.apellido }}</td>
-            <td>{{ estudiante.codigo }}</td>
-            <td>{{ estudiante.programaId }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </mat-card-content>
-  </mat-card>
-  <mat-card class="estudiante-card">
-    <mat-card-header>
-      <mat-card-title>
-        Estudiantes
-      </mat-card-title>
-    </mat-card-header>
-    <mat-divider></mat-divider>
-    <mat-card-content>
       <table mat-table [dataSource]="estudiantesDataSource" class="mat-elevation-z1">
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef>ID</th>

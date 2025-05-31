@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-estudiantes',
+  standalone: true,
   imports: [MatCardModule, MatDividerModule, MatButtonModule, MatTableModule, CommonModule],
   templateUrl: './estudiantes.component.html',
   styleUrl: './estudiantes.component.css'
@@ -38,7 +39,7 @@ export class EstudiantesComponent implements OnInit {
   }
 
   listarPagosDeEstudiante(estudiante:Estudiante){
-    this.router.navigateByUrl(`/admin/estudiante-detalles/${estudiante.codigo}`)
+    this.router.navigateByUrl(`/admin/estudiantes/${estudiante.codigo}`)
   }
 
 }
