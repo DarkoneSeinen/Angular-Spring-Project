@@ -1,27 +1,48 @@
-<div class="container">
-    <!--form group vincula un formulario-->
+<div class="login-container">
     <mat-card class="login-form" [formGroup]="loginForm">
-        <mat-card-header>
-            <mat-card-title>
-                Autenticación
+        <div class="login-header">
+            <mat-icon class="login-icon">account_circle</mat-icon>
+            <mat-card-title class="login-title">
+                Iniciar Sesión
             </mat-card-title>
-        </mat-card-header>
+            <mat-card-subtitle>
+                Bienvenido al Sistema de Pagos
+            </mat-card-subtitle>
+        </div>
 
-        <mat-divider></mat-divider>
-        <mat-card-content>
+        <div class="form-content">
             <mat-form-field appearance="outline">
                 <mat-label>Username o Email</mat-label>
-                <input matInput formControlName="username">
+                <input matInput formControlName="username" placeholder="usuario@ejemplo.com">
+                <mat-icon matPrefix>person</mat-icon>
+                <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
+                    Este campo es requerido
+                </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Password</mat-label>
-                <input matInput type="password" formControlName="password">
+                <mat-label>Contraseña</mat-label>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" 
+                       formControlName="password" 
+                       placeholder="Ingresa tu contraseña">
+                <mat-icon matPrefix>lock</mat-icon>
+                <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+                    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+                    Este campo es requerido
+                </mat-error>
             </mat-form-field>
-        </mat-card-content>
+        </div>
 
         <mat-card-actions class="align-end">
-            <button (click)="login()" mat-raised-button color="primary">Login</button>
+            <button (click)="login()" 
+                    mat-raised-button 
+                    color="primary" 
+                    class="login-button"
+                    [disabled]="loginForm.invalid">
+                Ingresar
+            </button>
         </mat-card-actions>
     </mat-card>
 </div>
