@@ -22,6 +22,10 @@
       </button>
     </mat-menu>
 
+    <button mat-icon-button (click)="toggleTheme()" [matTooltip]="(isDarkTheme$ | async) ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'">
+      <mat-icon>{{ (isDarkTheme$ | async) ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
+
     <button mat-button *ngIf="authService.isAuthenticated">
       {{ authService.username }}
     </button>

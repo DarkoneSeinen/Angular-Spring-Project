@@ -10,6 +10,84 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: #fafafa;
 }
 
+/* Estilos para el tema oscuro */
+.dark-theme {
+    background-color: #303030;
+    color: #ffffff;
+}
+
+.dark-theme .container {
+    background-color: #424242;
+}
+
+.dark-theme .mat-toolbar {
+    background-color: #212121;
+}
+
+.dark-theme .mat-drawer {
+    background-color: #424242;
+    color: #ffffff;
+}
+
+.dark-theme .mat-drawer-content {
+    background-color: #303030;
+}
+
+/* Estilos para las tarjetas del dashboard */
+.dark-theme mat-card,
+.dark-theme .mat-mdc-card {
+    background-color: #424242 !important;
+    color: #ffffff !important;
+}
+
+/* Estilos para las tablas */
+.dark-theme .mat-mdc-table {
+    background-color: #424242 !important;
+    color: #ffffff !important;
+}
+
+.dark-theme .mat-mdc-row:hover {
+    background-color: #505050 !important;
+}
+
+.dark-theme .mat-mdc-cell,
+.dark-theme .mat-mdc-header-cell {
+    color: #ffffff !important;
+}
+
+/* Estilos para los botones */
+.dark-theme .mat-mdc-raised-button {
+    background-color: #424242;
+}
+
+/* Estilos para los inputs y form fields */
+.dark-theme .mat-mdc-form-field-label,
+.dark-theme .mat-mdc-input-element {
+    color: #ffffff !important;
+}
+
+.dark-theme .mat-mdc-form-field-outline {
+    background-color: #424242;
+}
+
+/* Estilos para los gráficos */
+.dark-theme canvas {
+    background-color: #424242 !important;
+}
+
+/* Estilos para el menú */
+.dark-theme .mat-mdc-menu-panel {
+    background-color: #424242 !important;
+}
+
+.dark-theme .mat-mdc-menu-item {
+    color: #ffffff !important;
+}
+
+.dark-theme .mat-mdc-menu-item:hover {
+    background-color: #505050 !important;
+}
+
 mat-form-field {
     width: 100%;
 }
